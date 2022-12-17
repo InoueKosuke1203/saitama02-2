@@ -880,22 +880,35 @@ body { margin: 0; padding: 0; }
     );
 
 
-	window.addEventListener("deviceorientation", handleOrientation, true);
-	function handleOrientation(event) {
-		let alpha = event.alpha;
 
-		navigator.geolocation.watchPosition((position) => {
+	navigator.geolocation.watchPosition((position) => {
 		document.getElementById('fly3').addEventListener('click', () => {
 				map.flyTo({
 					center: [position.coords.longitude, position.coords.latitude],
 					zoom: 19,
-		    		bearing: alpha
+		    		bearing: position.coords.heading
 				});
 		});
 	});
 
 
-	}
+
+	// window.addEventListener("deviceorientation", handleOrientation, true);
+	// function handleOrientation(event) {
+	// 	let alpha = event.alpha;
+
+	// 	navigator.geolocation.watchPosition((position) => {
+	// 	document.getElementById('fly3').addEventListener('click', () => {
+	// 			map.flyTo({
+	// 				center: [position.coords.longitude, position.coords.latitude],
+	// 				zoom: 19,
+	// 	    		bearing: position.coods.heading
+	// 			});
+	// 	});
+	// });
+
+
+	// }
 
 
 
