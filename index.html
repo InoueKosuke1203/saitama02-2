@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>テストマップ(埼玉02)</title>
+<title>テストマップ(埼玉02-2)</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
@@ -13,25 +13,22 @@ body { margin: 0; padding: 0; }
 </head>
 <body>
 <style>
-	/* .gui { 
-
-	} */
-
-	.btns { 
+	/* .btns { 
 		margin: 0 auto;
         width: 500px;
         height: 200px;
 		display: flex;
 		justify-content: space-between;
 		z-index: 99;
-	}
+	} */
+
     #fly {
         display: inline-block;
         position: relative;
         width: 50px;
         height: 50px;
 		top: 260px;
-		left: 125px;
+		left: 155px;
 		background-image: url("https://lh3.googleusercontent.com/pw/AL9nZEV_Wh-ztJxKgjE5kIyB3kwP6V7mbMcZHGhO4r5htTMdG58Kzjn73E0vUcXA0fz4iR3uFQnPBdsYecKy3ErVazQiBkuOQ96mwcWXvAjBX4hk9FJlDd2zlOEeC9sAAVUCHpS_oKXctbtv9ebm9VUjHWot=s893-no?authuser=0");
 		background-size: cover;
 		border-width: 0px;
@@ -45,7 +42,7 @@ body { margin: 0; padding: 0; }
         width: 50px;
         height: 50px;
 		top: 260px;
-		left: 125px;
+		left: 155px;
 		background-image: url("https://lh3.googleusercontent.com/pw/AL9nZEVnO3CBJTO3Kge8R_AEm8tUAAJAC5-2CQxFaUp71ZdPcL42fcsiyJ11AsPjIOiRntINMeVW65U9x5lgJEy-KXR3pgCMMOaASyM_-ayzfCOJkU23Ycdn24BgKk0MDSJ4-o4VqEx3O4DkLr8ApkgSmbIs=s880-no?authuser=0");
 		background-size: cover;
 		border-width: 0px;
@@ -59,7 +56,7 @@ body { margin: 0; padding: 0; }
         width: 100px;
         height: 100px;
 		top: 320px;
-		left: 232px;
+		left: 262px;
         padding: 10px;
         border: 5px solid #fff;
         border-radius: 100%;
@@ -78,16 +75,12 @@ body { margin: 0; padding: 0; }
         width: 40px;
         height: 40px;
 		top: 380px;
-		left: 95px;
+		left: 125px;
         padding: 10px;
         border: 1px solid #f9ad9b;
         border-radius: 100%;
         -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
         box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
-        /* font-size: 15px; */
-        /* font-weight: 100; */
-        /* color: #fff; */
-        /* background: #f9ad9b; */
 		background-image: url("https://lh3.googleusercontent.com/pw/AL9nZEUd4r-NtdO8JAy2fEeBko5yYaSW50UYmdzVmNKEG9rzr4ZnMWsNfVKqhNQbjkwtKPz74tYXZMDDk5ZeLgQl9voDHGLsLz6xsLqdi3tV8Q7dHiG662xuzPbFJvZJ1aHQGNYoOBuashee03jRAhjO5rIg=s256-no?authuser=0");
 		background-size: cover;
 		touch-action: none;
@@ -110,7 +103,7 @@ body { margin: 0; padding: 0; }
 		}
 
 	#pic-start {
-		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEUYNaV3-cPop1gMVWnoXcJT8oc137ol1Iehgck6AwFyTL-IkJL_axotmR_uL6NbNsB9uSin8GYZDhoIEipeua95SKDKpT6qhv7UcDfG-WbZhpfZXJD9A1zOavoMINfciaDSbSSRHReccDkn67kQNqQV=s820-no?authuser=0');
+		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEX4aQuhaiRwj4Yf7tOeRBNHyIZVdQcMHSZSw0ShdJZvnCQJnfyNou2WgiOBMa7ou57FLzjT1tuj_WZEzzZep1V16J9XaahL-QO08_9rwXRgUPnxKLNb1MxvxXiW8zmfASyF_YPZnz8LcXSsbkYs5HYh=s893-no?authuser=0');
 		background-size: cover;
 		width: 50px;
 		height: 50px;
@@ -120,7 +113,8 @@ body { margin: 0; padding: 0; }
 	
 	.mapboxgl-popup {
 		max-width: 200px;
-        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        /* font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif; */
+		font: 12px/20px meiryo;
 	}
 
 	.text-image {
@@ -185,27 +179,13 @@ body { margin: 0; padding: 0; }
 	const isomaru = [139.6221207038798, 35.905893008627494];
 	const kotobuki = [139.62196066079045, 35.90565194302544];
     const exelco = [139.62170115706877, 35.90582466023077];
-    // const white = [139.62161175954787, 35.90634650194958];
     const oohara = [139.62169008589035, 35.90654208375243];
-    // const aida = [139.62110932960047, 35.906355082881866];
 	const maneki = [139.6210775803853, 35.90654366755441];
 	const hugu = [139.62066213256912, 35.90640186901099];
-	// const sushimasa = [139.62091142202266, 35.90651112564502];
     const parking = [139.62068588478425, 35.90664926434235];
-    // const eiraku = [139.6206633319401, 35.906504919454235];
-    // const gold = [139.62064973779627, 35.90731245942516];
 	const tsuta = [139.62052132713583, 35.90756162772532];
-	// const tree = [139.62039922795677, 35.90737208495851];
 	const hotel = [ 139.62015158365676, 35.90732875621451];
     const goal = [139.62027275518176, 35.90733662192796];
-
-	// const isomaruCross =  [139.62186615771736,35.90580877897951];
-	// const ooharaT = [139.62170819514023, 35.90644390164889];
-	// const manekiCross = [139.6212469130283, 35.90642485753633];
-	// const huguT = [139.6207858749153, 35.90642397709569];
-	// const eirakuCross = [ 139.62075691928658, 35.90657244559689];
-	// const michinari = [139.62052008439795, 35.906596873206844];
-	// const tsutaT = [139.62053387910092, 35.90748244587013];
 
 	const straight = 'https://lh3.googleusercontent.com/pw/AL9nZEV_Lg-u24FtCsI8IA8GQTRNvTcXwVvmPKWQQRIrwgMYbAtw0hGPAVEvNaZIDEPIazbKU6F29CLt30AwuwHs4-l30ea8NAouVTCb72o273qXmCGk8oVU7T4Gs1z9St-hHv6HYTwC5onhNWqe0Hrp_34N=s893-no?authuser=0'
 	const gosaroLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEXE-Fnb0umi5gYeeqtzK1GRNgF7cxWCuQgSt9hcXTfX6srAOCk1goF3lykZXCoFHhcPzjZEfnGXa1kU1v3b7YdTQOFajh5plXGT9Z7cF6NdVBytMFMooQ8qRfcCkUnFJgeDaNspMdAdz07TYGFN5hv_=s893-no?authuser=0'
@@ -279,26 +259,31 @@ body { margin: 0; padding: 0; }
 		});
 		
 		document.getElementById('zoomto').addEventListener('click', () => {
-			// Geographic coordinates of the LineString
-			const coordinates = geojson.features[0].geometry.coordinates;
-		
-			// Create a 'LngLatBounds' with both corners at the first coordinate.
-			const bounds = new mapboxgl.LngLatBounds(
-				coordinates[0],
-				coordinates[0]
-			);
-		
-			// Extend the 'LngLatBounds' to include every coordinate in the bounds result.
-			for (const coord of coordinates) {
-				bounds.extend(coord);
-			}
-		
-			map.fitBounds(bounds, {
-				padding: 20,
-				pitch: 0,
-				bearing: 0,
-                zoom: 16.5
-			});
+
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
+
+			// const coordinates = geojson.features[0].geometry.coordinates;
+			// const bounds = new mapboxgl.LngLatBounds(
+			// 	coordinates[0],
+			// 	coordinates[0]
+			// );
+			// for (const coord of coordinates) {
+			// 	bounds.extend(coord);
+			// }
+			// map.fitBounds(bounds, {
+			// 	padding: 20,
+			// 	pitch: 0,
+			// 	bearing: 0,
+            //     zoom: 16.5
+			// });
+
 		});
 	})
 
@@ -306,7 +291,6 @@ body { margin: 0; padding: 0; }
     var n = 0;
     document.getElementById('fly').addEventListener('click', () => {
         if(n == 0){
-
 			map.flyTo({
             center: start,
             zoom: 19.5,
@@ -315,36 +299,20 @@ body { margin: 0; padding: 0; }
 		    bearing: -95,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
-
             n = n + 1,
 			document.getElementById('target').textContent = '出発'
 			document.getElementById('picture').src = picisomaru
 			document.getElementById('direction').src = straight
-
         }
         else if(n == 1){
-
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-			// map.flyTo({
-		    // pitch: 0,
-            // essential: true // this animation is considered essential with respect to prefers-reduced-motion
-            // });
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n + 1,
 			document.getElementById('target').textContent = 'EXELCO'
             document.getElementById('picture').src = picexelco
@@ -360,24 +328,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 2){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n + 1
 			document.getElementById('target').textContent = '大原医院'
             document.getElementById('picture').src = picoohara
@@ -388,24 +346,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 3){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n + 1
 			document.getElementById('target').textContent = 'まねきねこ'
             document.getElementById('picture').src = picmaneki
@@ -416,127 +364,89 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 4){
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-		coordinates[0],
-		coordinates[0]
-		);
-		for (const coord of coordinates) {
-		bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-		padding: 20,
-		pitch: 0,
-		bearing: 0,
-		zoom: 16.5
-		});
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
+        	n = n + 1
+			document.getElementById('target').textContent = '大間の関'
+        	document.getElementById('picture').src = pichugu
+			document.getElementById('direction').src = tRight
 
-        n = n + 1
-		document.getElementById('target').textContent = '大間の関'
-        document.getElementById('picture').src = pichugu
-		document.getElementById('direction').src = tRight
-
-		popup1 = new mapboxgl.Marker(el1)
-    	.setLngLat(hugu)
-    	.addTo(map)
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(hugu)
+    		.addTo(map)
         }
         else if(n == 5){
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-		coordinates[0],
-		coordinates[0]
-		);
-		for (const coord of coordinates) {
-		bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-		padding: 20,
-		pitch: 0,
-		bearing: 0,
-		zoom: 16.5
-		});
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
+        	n = n + 1
+			document.getElementById('target').textContent = '駐車場'
+    		document.getElementById('picture').src = picparking
+			document.getElementById('direction').src = nextLeft
 
-        n = n + 1
-		document.getElementById('target').textContent = '駐車場'
-        document.getElementById('picture').src = picparking
-		document.getElementById('direction').src = nextLeft
-
-		popup1 = new mapboxgl.Marker(el1)
-    	.setLngLat(parking)
-    	.addTo(map)
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(parking)
+    		.addTo(map)
         }
         else if(n == 6){
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-		coordinates[0],
-		coordinates[0]
-		);
-		for (const coord of coordinates) {
-		bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-		padding: 20,
-		pitch: 0,
-		bearing: 0,
-		zoom: 16.5
-		});
+		map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
+			n = n + 1
+			document.getElementById('target').textContent = 'ツタの生えた建物'
+        	document.getElementById('picture').src = pictsuta
+			document.getElementById('direction').src = tLeft
 
-		n = n + 1
-		document.getElementById('target').textContent = 'ツタの生えた建物'
-        document.getElementById('picture').src = pictsuta
-		document.getElementById('direction').src = tLeft
-
-		popup1 = new mapboxgl.Marker(el1)
-    	.setLngLat(tsuta)
-    	.addTo(map)
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(tsuta)
+    		.addTo(map)
         }
         else if(n == 7){
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-		coordinates[0],
-		coordinates[0]
-		);
-		for (const coord of coordinates) {
-		bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-		padding: 20,
-		pitch: 0,
-		bearing: 0,
-		zoom: 16.5
-		});
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
+			n = n + 1
+			document.getElementById('target').textContent = '到着'
+        	document.getElementById('picture').src = pichotel
+			document.getElementById('direction').src = 'https://lh3.googleusercontent.com/pw/AL9nZEX4ICnem_YvB5XOj7mIz4DfB38U6-5QJc9VdUYKomNukbP1Fiqxhp6PbxT_IzNtWdq_Sc41d4PigpIxEVbb5ojWaPM4J6ie2WGEVKZ3twnpFr8jHwK8EsYd0OFpc_Gt0WB06kghkgxXZ3OCpSorTuhf=s893-no?authuser=0'
 
-		n = n + 1
-		document.getElementById('target').textContent = '到着'
-        document.getElementById('picture').src = 'https://lh3.googleusercontent.com/pw/AL9nZEX4ICnem_YvB5XOj7mIz4DfB38U6-5QJc9VdUYKomNukbP1Fiqxhp6PbxT_IzNtWdq_Sc41d4PigpIxEVbb5ojWaPM4J6ie2WGEVKZ3twnpFr8jHwK8EsYd0OFpc_Gt0WB06kghkgxXZ3OCpSorTuhf=s893-no?authuser=0'
-		document.getElementById('direction').src = 'https://lh3.googleusercontent.com/pw/AL9nZEX4ICnem_YvB5XOj7mIz4DfB38U6-5QJc9VdUYKomNukbP1Fiqxhp6PbxT_IzNtWdq_Sc41d4PigpIxEVbb5ojWaPM4J6ie2WGEVKZ3twnpFr8jHwK8EsYd0OFpc_Gt0WB06kghkgxXZ3OCpSorTuhf=s893-no?authuser=0'
-
-		popup1 = new mapboxgl.Marker(el1)
-    	.setLngLat(hotel)
-    	.addTo(map)
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(hotel)
+    		.addTo(map)
         }
     });
 
     document.getElementById('fly2').addEventListener('click', () => {
         if(n == 8){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = 'ツタの生えた建物'
             document.getElementById('picture').src = pictsuta
@@ -547,24 +457,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 7){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = '駐車場'
             document.getElementById('picture').src = picparking
@@ -575,24 +475,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 6){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = '大間の関'
             document.getElementById('picture').src = pichugu
@@ -603,24 +493,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 5){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = 'まねきねこ'
             document.getElementById('picture').src = picmaneki
@@ -631,24 +511,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 4){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = '大原医院'
             document.getElementById('picture').src = picoohara
@@ -659,24 +529,14 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 3){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = 'EXELCO'
             document.getElementById('picture').src = picexelco
@@ -687,53 +547,32 @@ body { margin: 0; padding: 0; }
     		.addTo(map)
         }
         else if(n == 2){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
             n = n - 1
 			document.getElementById('target').textContent = '出発'
 			document.getElementById('picture').src = picisomaru
 			document.getElementById('direction').src = straight
-
 
 			popup1 = new mapboxgl.Marker(el1)
     		.setLngLat(start)
     		.addTo(map)
         }
         else if(n == 1){
-
-
-		const coordinates = geojson.features[0].geometry.coordinates;
-		const bounds = new mapboxgl.LngLatBounds(
-			coordinates[0],
-			coordinates[0]
-		);
-		for (const coord of coordinates) {
-			bounds.extend(coord);
-		}
-		map.fitBounds(bounds, {
-			padding: 20,
-			pitch: 0,
-			bearing: 0,
-			zoom: 16.5
-		});
-
-
+			map.flyTo({
+            center: [139.62122803718805, 35.90714919681077],
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: 0,
+            essential: true
+            });
 			document.getElementById('target').textContent = '出発'
 			document.getElementById('picture').src = picisomaru
 			document.getElementById('direction').src = straight
