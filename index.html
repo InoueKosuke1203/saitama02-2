@@ -184,7 +184,7 @@ body { margin: 0; padding: 0; }
         center: start,
         zoom: 18,
         padding: 40,
-		pitch: 20,
+		pitch: 0,
 		bearing: 30
     });
 
@@ -209,17 +209,16 @@ body { margin: 0; padding: 0; }
 			}
 		});
 		
-		document.getElementById('zoomto').addEventListener('click', () => {
+		// document.getElementById('zoomto').addEventListener('click', () => {
 
-			map.flyTo({
-            center: [139.62122803718805, 35.90714919681077],
-            zoom: 16.5,
-            padding: 40,
-		    pitch: 0,
-		    bearing: 0,
-            essential: true
-            });
-
+		// 	map.flyTo({
+        //     center: [139.62122803718805, 35.90714919681077],
+        //     zoom: 16.5,
+        //     padding: 40,
+		//     pitch: 0,
+		//     bearing: 0,
+        //     essential: true
+        //     });
 			// const coordinates = geojson.features[0].geometry.coordinates;
 			// const bounds = new mapboxgl.LngLatBounds(
 			// 	coordinates[0],
@@ -234,8 +233,7 @@ body { margin: 0; padding: 0; }
 			// 	bearing: 0,
             //     zoom: 16.5
 			// });
-
-		});
+		// });
 	})
 
     // 目印移動
@@ -277,7 +275,6 @@ body { margin: 0; padding: 0; }
 			popup1 = new mapboxgl.Marker(el1)
     		.setLngLat(exelco)
     		.addTo(map)
-
         }
         else if(n == 2){
 			map.flyTo({
@@ -546,7 +543,7 @@ body { margin: 0; padding: 0; }
 	// .setPopup(popup1)
 	.addTo(map);
 
-	const popup2 = new mapboxgl.Popup({ offset: 25 }).setText(
+	const popup2 = new mapboxgl.Popup({ offset: 25 , closeButton: false}).setText(
 		'階段'
 	);
 	const el2 = document.createElement('div');
@@ -554,9 +551,10 @@ body { margin: 0; padding: 0; }
 	new mapboxgl.Marker(el2)
 	.setLngLat(isomaru)
 	.setPopup(popup2)
-	.addTo(map);
+	.addTo(map)
+	.togglePopup();
 
-	const popup3 = new mapboxgl.Popup({ offset: 25 }).setText(
+	const popup3 = new mapboxgl.Popup({ offset: 25 , closeButton: false}).setText(
 		'コトブキ'
 	);
 	const el3 = document.createElement('div');
@@ -564,7 +562,8 @@ body { margin: 0; padding: 0; }
 	new mapboxgl.Marker(el3)
 	.setLngLat(kotobuki)
 	.setPopup(popup3)
-	.addTo(map);
+	.addTo(map)
+	.togglePopup();
 
 
     // 位置情報
@@ -573,22 +572,10 @@ body { margin: 0; padding: 0; }
             positionOptions: {
                 enableHighAccuracy: true
             },
-            // When active the map will receive updates to the device's location as it changes.
             trackUserLocation: true,
-            // Draw an arrow next to the location dot to indicate which direction the device is heading.
             showUserHeading: true
         })
     );
-
-	navigator.geolocation.watchPosition((position) => {
-		document.getElementById('fly3').addEventListener('click', () => {
-			map.flyTo({
-				center: [position.coords.longitude, position.coords.latitude],
-				zoom: 18,
-		    	// bearing: position.coords.heading
-			});
-		});
-	});
 </script>
 
 </body>
