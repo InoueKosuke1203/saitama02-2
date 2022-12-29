@@ -273,6 +273,10 @@ body { margin: 0; padding: 0; }
 			document.getElementById('target').textContent = '磯丸水産'
 			document.getElementById('picture').src = picisomaru
 			document.getElementById('direction').src = straight
+
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(isomaru)
+    		.addTo(map)
 	});
 
     // 目印移動
