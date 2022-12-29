@@ -143,14 +143,14 @@ body { margin: 0; padding: 0; }
 </div>
 <script>
     const start = [139.622001182074, 35.9058683554834];
-	const isomaru = [139.6221207038798, 35.905893008627494];
+	const kaidan = [139.622238016154344, 35.905901965318755];
 	const kotobuki = [139.62196066079045, 35.90565194302544];
     const exelco = [139.62170115706877, 35.90582466023077];
     const oohara = [139.6216347851764, 35.906627852225];
 	const maneki = [139.6210775803853, 35.90654366755441];
-	const hugu = [139.62057526907262, 35.906418090468605];
-    const parking = [139.6206548205192, 35.9067266894904];
-	const bikeparking = [139.62029425906263, 35.90657510649024];
+	const hugu = [139.6206940771448, 35.90641454983887];
+    const parking = [139.62069919107955, 35.90663469290715];
+	const bikeparking = [139.62045638698092, 35.90654075384531];
 	const tsuta = [139.6204461951588, 35.907610006595675];
 	const hotel = [139.62015158365676, 35.90732875621451];
     const goal = [139.62027275518176, 35.90733662192796];
@@ -275,7 +275,7 @@ body { margin: 0; padding: 0; }
 			document.getElementById('direction').src = straight
 
 			popup1 = new mapboxgl.Marker(el1)
-    		.setLngLat(isomaru)
+    		.setLngLat(start)
     		.addTo(map)
 	});
 
@@ -342,8 +342,8 @@ body { margin: 0; padding: 0; }
         }
         else if(n == 3){
 			map.flyTo({
-            center: secondcenter,
-            zoom: 16.5,
+            center: [139.6206847334082, 35.90643041237198],
+            zoom: 18,
             padding: 40,
 		    pitch: 0,
 		    bearing: -95,
@@ -360,8 +360,8 @@ body { margin: 0; padding: 0; }
         }
         else if(n == 4){
 			map.flyTo({
-            center: center,
-            zoom: 16.5,
+            center: [139.62075862817665, 35.90657484006642],
+            zoom: 18,
             padding: 40,
 		    pitch: 0,
 		    bearing: 0,
@@ -378,8 +378,8 @@ body { margin: 0; padding: 0; }
         }
         else if(n == 5){
 			map.flyTo({
-            center: secondcenter,
-            zoom: 16.5,
+            center: [139.6202220879132, 35.90663859635496],
+            zoom: 18,
             padding: 40,
 		    pitch: 0,
 		    bearing: -95,
@@ -596,13 +596,13 @@ body { margin: 0; padding: 0; }
 	const el2 = document.createElement('div');
 	el2.id = 'pic-startrand';
 	new mapboxgl.Marker(el2)
-	.setLngLat(isomaru)
+	.setLngLat(kaidan)
 	.setPopup(popup2)
 	.addTo(map)
 	.togglePopup();
 
 	const popup3 = new mapboxgl.Popup({ offset: 25 , closeButton: false}).setText(
-		'コトブキ'
+		'パチンコ コトブキ'
 	);
 	const el3 = document.createElement('div');
 	el3.id = 'pic-startrand';
