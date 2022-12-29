@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>テストマップ(埼玉02-4)</title>
+<title>テストマップ(埼玉02-5)</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
 <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
 <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
@@ -19,7 +19,7 @@ body { margin: 0; padding: 0; }
         width: 50px;
         height: 50px;
 		top: 350px;
-		left: 250px;
+		left: 150px;
 		background-image: url("https://lh3.googleusercontent.com/pw/AL9nZEV_Wh-ztJxKgjE5kIyB3kwP6V7mbMcZHGhO4r5htTMdG58Kzjn73E0vUcXA0fz4iR3uFQnPBdsYecKy3ErVazQiBkuOQ96mwcWXvAjBX4hk9FJlDd2zlOEeC9sAAVUCHpS_oKXctbtv9ebm9VUjHWot=s893-no?authuser=0");
 		background-size: cover;
 		border-width: 0px;
@@ -33,11 +33,26 @@ body { margin: 0; padding: 0; }
         width: 50px;
         height: 50px;
 		top: 350px;
-		left: 250px;
+		left: 150px;
 		background-image: url("https://lh3.googleusercontent.com/pw/AL9nZEVnO3CBJTO3Kge8R_AEm8tUAAJAC5-2CQxFaUp71ZdPcL42fcsiyJ11AsPjIOiRntINMeVW65U9x5lgJEy-KXR3pgCMMOaASyM_-ayzfCOJkU23Ycdn24BgKk0MDSJ4-o4VqEx3O4DkLr8ApkgSmbIs=s880-no?authuser=0");
 		background-size: cover;
 		border-width: 0px;
 		border-radius: 20%;
+		touch-action: none;
+    }
+
+	#fly3 {
+        display: inline-block;
+        position: relative;
+        width: 100px;
+        height: 50px;
+		top: 270px;
+		left: 260px;
+		background-color: #fa471f;
+		border-width: 0px;
+		border-radius: 10%;
+		font-weight: bold;
+		color: white;
 		touch-action: none;
     }
 
@@ -47,7 +62,6 @@ body { margin: 0; padding: 0; }
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		cursor: pointer;
 	}
 
 	#pic-startrand {
@@ -56,7 +70,14 @@ body { margin: 0; padding: 0; }
 		width: 50px;
 		height: 50px;
 		border-radius: 50%;
-		cursor: pointer;
+	}
+
+	#pic-goal {
+		background-image: url('https://lh3.googleusercontent.com/pw/AL9nZEU1UBvdu6m5qNDlIoCQF-aeyAvjRqxSpmUIveSbV9fcpCxyV5YgbJQ_ywoFQHEyC4Aoa6ypI5RNS2IWEoeBLfB0im9BZL-PEXPoZxorY_a0qeQX_CI6t_vhwcZBtugJ18zD_Uq8wPLxp3tjS9UlheEb=s880-no?authuser=0');
+		background-size: cover;
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
 	}
 
 	
@@ -112,10 +133,11 @@ body { margin: 0; padding: 0; }
 	<div class="text-image">
 		<img src="https://lh3.googleusercontent.com/pw/AL9nZEVIysmTrQQrBCmxAH3RiYb9ed7R0kurb0R_Mkr-dn_tJuloBF-R2yKp82c_VYM8SGEm32ut8rhs5PLRSZPxeoE7utNC7AYv493ypTq60rskoBWwXb_mqnEJmJu9kgA_EgQYbFVmp3einMdjjYPz_7Ny=w625-h368-no?authuser=0" alt="" class="background">
 		<img id="picture" src="https://lh3.googleusercontent.com/pw/AL9nZEX4ICnem_YvB5XOj7mIz4DfB38U6-5QJc9VdUYKomNukbP1Fiqxhp6PbxT_IzNtWdq_Sc41d4PigpIxEVbb5ojWaPM4J6ie2WGEVKZ3twnpFr8jHwK8EsYd0OFpc_Gt0WB06kghkgxXZ3OCpSorTuhf=s893-no?authuser=0" alt="" class="picture">
-		<img id="direction" src="https://lh3.googleusercontent.com/pw/AL9nZEV_Lg-u24FtCsI8IA8GQTRNvTcXwVvmPKWQQRIrwgMYbAtw0hGPAVEvNaZIDEPIazbKU6F29CLt30AwuwHs4-l30ea8NAouVTCb72o273qXmCGk8oVU7T4Gs1z9St-hHv6HYTwC5onhNWqe0Hrp_34N=s893-no?authuser=0" alt="" class="direction">
+		<img id="direction" src="https://lh3.googleusercontent.com/pw/AL9nZEU1gzynIJrHWvMhDwmy1bhZ4FSMHkcCButDmj3m5ciqNlICefPOfskbZAiaQRbYwbfrG721jymyfOJ2x_fJpWdtOfcZQb5bIUKqYWgk0DIGF0_4NPcIL8q-RK-Jq4i8wlU0sDNcJ1fGf1rn9Q9o-lkH=s882-no?authuser=0" alt="" class="direction">
 		<p id="target">目印</p>
 	</div>
 	<br>
+		<button id="fly3">案内開始</button>
 		<button id="fly2"></button>
 		<button id="fly"></button>
 </div>
@@ -128,6 +150,7 @@ body { margin: 0; padding: 0; }
 	const maneki = [139.6210775803853, 35.90654366755441];
 	const hugu = [139.62057526907262, 35.906418090468605];
     const parking = [139.6206548205192, 35.9067266894904];
+	const bikeparking = [139.62029425906263, 35.90657510649024];
 	const tsuta = [139.6204461951588, 35.907610006595675];
 	const hotel = [139.62015158365676, 35.90732875621451];
     const goal = [139.62027275518176, 35.90733662192796];
@@ -138,16 +161,15 @@ body { margin: 0; padding: 0; }
 	const secondcenter = [139.62087263848724, 35.906672483381136];
 
 
-	const straight = 'https://lh3.googleusercontent.com/pw/AL9nZEV_Lg-u24FtCsI8IA8GQTRNvTcXwVvmPKWQQRIrwgMYbAtw0hGPAVEvNaZIDEPIazbKU6F29CLt30AwuwHs4-l30ea8NAouVTCb72o273qXmCGk8oVU7T4Gs1z9St-hHv6HYTwC5onhNWqe0Hrp_34N=s893-no?authuser=0'
-	const gosaroLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEXE-Fnb0umi5gYeeqtzK1GRNgF7cxWCuQgSt9hcXTfX6srAOCk1goF3lykZXCoFHhcPzjZEfnGXa1kU1v3b7YdTQOFajh5plXGT9Z7cF6NdVBytMFMooQ8qRfcCkUnFJgeDaNspMdAdz07TYGFN5hv_=s893-no?authuser=0'
-	const crossLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEV2XhJA6xfRO4fz0B1-g2LvyekFxz0PoGhPV3O2sUTl3BTl1wEPn2KQj6TNWRyOJo31nSovFNU3RZJcNKXIFdwfw3xsOspdKsAPagHxzrsRRAEiTx3OG-zCWUa8AkGDLKu5aH-jOYUWVwk_z6gx8W_G=s625-no?authuser=0'
-	const crossRight = 'https://lh3.googleusercontent.com/pw/AL9nZEW0cLgN1_i0AlDnok19Z3plBJOPTJRnHUu0xPlVKAwUKELcWUX-eJsiNK2Xievj5CNuqZzPR1v5Lxjcp5Uv7wkQGftoKi5LO96p6mQ9HMHj20hvRZu9ZxxDEhX6Z-3C-TkVtkA4zjpKKNLYIsN4-KHt=s893-no?authuser=0'
-	const nextLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEWt_UDbxQ621FKtzHfEvtlA0dRcniUA7_RYL3IgbUpDYA6KexTcp7z5LXfqoPjap25e90AgPz82YQS8Rsbjp0ODMYnjU0P6B7Q7tRcFMMNQsUcD8zKaLOs9svjE-Uw0B8lrZRoIHFjjrRHJQ8JHJ34v=s625-no?authuser=0'
-	const nextRight = 'https://lh3.googleusercontent.com/pw/AL9nZEX06pUXOHg3uVQLV924fjvhaaJjrfzuzlSfIWmKZRBs64czmSU3i9z0lezStacdoslcmOLSWXwMoUY8If3-Yknrv3PfqrvTCSQbSnNoLbz2rf3wScztVBgzGjXNCJNAKoYlzjQFP20vZBC8OchJFnjF=s822-no?authuser=0'
-	const tLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEXkm7dAj-XRje9ni5_NkIHTcj9tvPY6fmwIuka6rugArzGtI-SPFhy3k9jS1BPlRaz-WqaleUqAsqLgJIEat8FP1P92UUgj_-2rlhBpOWvxjM7Ct8wFTY2aeWnNT2zWAYN8px8c7uHf8ZnCLWOEF6ls=s625-no?authuser=0'
-	const tRight = 'https://lh3.googleusercontent.com/pw/AL9nZEWzwcMZYqQ6Yd0afBo0pdUbIKJKHy32edEJ8VKfqxog18i-raz2lk7SUau028GdfmLckG3k4OrMdaWCK3ZjyFfxVTbG950NYXWHWb_LBHuKn20hqrLtDNriu-SjcvdoprFmGBrhULFT3uLcg0tbeyFu=s625-no?authuser=0'
-	const right = 'https://lh3.googleusercontent.com/pw/AL9nZEX4ILCARry81KphmCT4zYS2pnW3bWBTPjMjwqc-sLzIwM9hgdLjDpxXObY6CGKGhmXeIA32a9Do1Vk096h_UtXzpJQFSXoIn7ncjduqTjFTWTfUlfRnce00MmrTFsMkotVdwWy1lZixt6U7EeTuiwRB=s822-no?authuser=0'
-	const sLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEX4zccjuca_TZpATBw7sowDlgxF-L3Q_glxWmNZtU3PZCC5HjEvpW6G5hXe5ZBygUX_936xKg-cSUj6Jm4nKftNfzg8z-7L38VyYqMq290q8gi226EiAZVCkl34-KPmsiO0oQ6zwkA0XkifGU08rKoZ=s822-no?authuser=0'
+	const straight = 'https://lh3.googleusercontent.com/pw/AL9nZEU1gzynIJrHWvMhDwmy1bhZ4FSMHkcCButDmj3m5ciqNlICefPOfskbZAiaQRbYwbfrG721jymyfOJ2x_fJpWdtOfcZQb5bIUKqYWgk0DIGF0_4NPcIL8q-RK-Jq4i8wlU0sDNcJ1fGf1rn9Q9o-lkH=s882-no?authuser=0'
+	const crossLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEWjkpoSpNHXZqHiUfwbmY2eG-2Os__jVb2-mG4TbbqpWnQ5hujVeG4VB08GUiegZyib6dmMN1ijTvvgqElD0EwL9NKHxPgG_foKnRsqALk1xzh9Kg8dnpp8PnNP0jtsr9mP2WkmeIbufi5sdVi1Rki1=s880-no?authuser=0'
+	const crossRight = 'https://lh3.googleusercontent.com/pw/AL9nZEUcCpocn5CZn1pIh3rHK7YQ1c08H4ldoD_sr9AbtqR1lKfXE2CUFHipD6olwyfLqQwq2MAMZJNHDUMPDVZcarb3EogbMckCpv0MCJefJ20tbPBBG-ZexuM_rqQab411UNw_R-dZ_DqEtf_8BpbqSMT3=s880-no?authuser=0'
+	const nextLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEV10REvc_05d9lCZqhW8gI7tOZ8KI_wkC8eow8aXjmCgk1bslmCA38wyZhXJGXUr-CnJK8OLQQ7bVw391vjdCryf0BxNLUwvCDTzL33ZgaGDNzeBSdEXQHiKPGTRbv2D3UDCgOGVg9-d1daA23HP3Za=s880-no?authuser=0'
+	const nextRight = 'https://lh3.googleusercontent.com/pw/AL9nZEWqNyn65mve8CaTS4lEKR8uR318Y98d7UzswHT_VCa6iRMg-Eb9Uj1wuUuy9sc2OGEbl3sfB4K1eGKBknw3QFa4ZHmSk18GX6BvkvIWr0XjDJmrxlAupaZBrUmUujKaPhz5ciqTiYnoM6wSi63KKT_y=s880-no?authuser=0'
+	const tLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEVIz284ewQCGHNsCpweF-u8MFk3L-B-u3y1ZtrlXa00v1RrRIdsmY28HWNPSIdMJIZU7LGkWVMFHYNlQJ2jIRasnnYxJ5lGemQdhoi4ZAG-KHz9uQ2zomax97D3shypsPWP68a2kXoEvrgpcaaO09-7=s880-no?authuser=0'
+	const tRight = 'https://lh3.googleusercontent.com/pw/AL9nZEWo5ZMsBJ5_5NUXI7fVrIpGRJG2-NmW1GCFSN_hMEuNIxFut_XaVHBajH3NFYWRvaD50zKKLfLBJuDQOEjTJNAGNwRkvfHE00ps7lAqMXDcUsa0Na_cYmXp4HfRyj_mHeAPyeZYnd4nFE8DbNLto4jN=s880-no?authuser=0'
+	const right = 'https://lh3.googleusercontent.com/pw/AL9nZEXCETx_yHGpTyrxCQuYVMdA6-tzvAgybiLbnVWQK7G7i8cU0ZN2P1GCfbInCcyni06TbIb8WDN6Iqc-DFb4spYIc6jciZWgHtXmfqM6KlRTqiI4Vul8KBiurGaSJtzT8Ti81Vo8J01u0aYHIfXrQDtk=s880-no?authuser=0'
+	// const sLeft = 'https://lh3.googleusercontent.com/pw/AL9nZEX4zccjuca_TZpATBw7sowDlgxF-L3Q_glxWmNZtU3PZCC5HjEvpW6G5hXe5ZBygUX_936xKg-cSUj6Jm4nKftNfzg8z-7L38VyYqMq290q8gi226EiAZVCkl34-KPmsiO0oQ6zwkA0XkifGU08rKoZ=s822-no?authuser=0'
 
 	const picisomaru = 'https://lh3.googleusercontent.com/pw/AL9nZEUbQSx3LReoMyd75HYcNYilucmq-jX5p549fENhYiNeAIGyrlws310Cxw5eDUGaOJZXR30uXM-lJDqltFnIOiOLTzpGTHdp-wZkoBCtl7WVwFbns6iPl8mmen953ThCjM1sD8LPZCqOVlmShzqGep05=s724-no?authuser=0'
 	const pickotobuki = 'https://lh3.googleusercontent.com/pw/AL9nZEVy1akPUQP2U2gorFJALKuBht9U5aYIQDnfEOfIARU6yPrTqDtmO4FVA8yKCq21dDWUQSIUa8vuI6epGM_JZv48WQ5wW1Pqry59ZP-2LOXUZG_n8F0LhgWDmM6eWJhL9-N8u-6pWjm4D71njiVWmLhG=s724-no?authuser=0'
@@ -156,6 +178,7 @@ body { margin: 0; padding: 0; }
 	const picmaneki = 'https://lh3.googleusercontent.com/pw/AL9nZEUcnDgcOuYzXM5YiTyOFhXNjFd2iUPCmsaaGBXWhCCg2M7vmJepdt7c3-J9DNvDo0bTfHUCrx8_shMaMcM-CucqwOdkZTqHFWB_2hEzsf0Wh7ZLSpSfVMkiXjk_Tqe1oUzsnkSX3nqyY_KEjx-fZ2x3=s724-no?authuser=0'
 	const pichugu = 'https://lh3.googleusercontent.com/pw/AL9nZEV_mzWBou3qlypn30sZtS-yx9t1i5d-eNOngSHF6eTxnZMj9fSdE0-u1EiDHVQT8erkoroG6ibhnpNwwTM_cd6Qr2CQvnh8MsDN0C2Od3rw0P1vTMVdJbkkrxM7mPc0m09iZC1VthHK4QKmtUP-jNNy=s724-no?authuser=0'
 	const picparking = 'https://lh3.googleusercontent.com/pw/AL9nZEWmd23phlrgNcRczVKv39QpN5EgOVlfltY3mp_y-Sg1SmT5f9rU6bdy5riu_jLDdXf4KTR18PE0bKQk-CjQkWAzz9QZ8MJHY5z8KZ6xCqMpMmK-fQqCfrTCOwRhGgejw8Udo9DHJo9d9R3u37E2pYRD=s893-no?authuser=0'
+	const picbikeparking = 'https://lh3.googleusercontent.com/pw/AL9nZEVYUkyKMCRDQbuvyjzxbtd5v423XMVhP6xK3Cmry0MrQk5jsudzia1dutaS246dwgrxi2AtlP_QTVzgCbO6Iyttv8www-A0WzNj7I2WJovPnp_XhPfSnrVGzN0mTxZbBsyP1yrbgiEyg4f8WTcCgSFs=s893-no?authuser=0'
 	const pictsuta = 'https://lh3.googleusercontent.com/pw/AL9nZEXNmpZziM5d-rzEfwZs-YY3R9WKPaxgVdAsR0jerBX91wu3P1Z_Bx5yLYNwLKQau4DPoC75N6_6GeypSUy4k51YEs0URTwcrm9lrSAccbhVgLKyjTaGEsKLbRtNoi2LUzaUirojbu7NGxkw_pxiDcKA=s724-no?authuser=0'
 	const pichotel = 'https://lh3.googleusercontent.com/pw/AL9nZEVE8E3tMYVbSbCro3-afVF3_u5r8uC6T3mXFcCFBUi5o-pv5NzhcIcgX9yxNKjV4Tv84R7r7wiHOasZLsdyYQLv3rC9ybaOxS4YD6tRoo1vQAJL6ykwDdlIcuW7vjX4vMPYFf2quuzcuupGLAOf3Y85=s893-no?authuser=0'
 
@@ -236,11 +259,9 @@ body { margin: 0; padding: 0; }
 		// });
 	})
 
-    // 目印移動
-    var n = 0;
-    document.getElementById('fly').addEventListener('click', () => {
-        if(n == 0){
-			map.flyTo({
+	var n = 0;
+	document.getElementById('fly3').addEventListener('click', () => {
+		map.flyTo({
             center: start,
             zoom: 18.5,
             padding: 40,
@@ -248,12 +269,15 @@ body { margin: 0; padding: 0; }
 		    bearing: -95,
             essential: true // this animation is considered essential with respect to prefers-reduced-motion
             });
-            n = n + 1,
+            n = 0,
 			document.getElementById('target').textContent = '磯丸水産'
 			document.getElementById('picture').src = picisomaru
 			document.getElementById('direction').src = straight
-        }
-        else if(n == 1){
+	});
+
+    // 目印移動
+    document.getElementById('fly').addEventListener('click', () => {
+        if(n == 0){
 			map.flyTo({
             center: exelcoCross,
             zoom: 18.5,
@@ -276,7 +300,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(exelco)
     		.addTo(map)
         }
-        else if(n == 2){
+        else if(n == 1){
 			map.flyTo({
             center: center,
             zoom: 16.5,
@@ -294,7 +318,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(oohara)
     		.addTo(map)
         }
-        else if(n == 3){
+        else if(n == 2){
 			map.flyTo({
             center: secondcenter,
             zoom: 16.5,
@@ -312,7 +336,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(maneki)
     		.addTo(map)
         }
-        else if(n == 4){
+        else if(n == 3){
 			map.flyTo({
             center: secondcenter,
             zoom: 16.5,
@@ -330,7 +354,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(hugu)
     		.addTo(map)
         }
-        else if(n == 5){
+        else if(n == 4){
 			map.flyTo({
             center: center,
             zoom: 16.5,
@@ -348,8 +372,26 @@ body { margin: 0; padding: 0; }
     		.setLngLat(parking)
     		.addTo(map)
         }
+        else if(n == 5){
+			map.flyTo({
+            center: secondcenter,
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: -95,
+            essential: true
+            });
+			n = n + 1
+			document.getElementById('target').textContent = 'バイク用駐車場'
+        	document.getElementById('picture').src = picbikeparking
+			document.getElementById('direction').src = right
+
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(bikeparking)
+    		.addTo(map)
+        }
         else if(n == 6){
-		map.flyTo({
+			map.flyTo({
             center: center,
             zoom: 16.5,
             padding: 40,
@@ -405,7 +447,25 @@ body { margin: 0; padding: 0; }
     		.setLngLat(tsuta)
     		.addTo(map)
         }
-        else if(n == 7){
+		else if(n == 7){
+			map.flyTo({
+            center: secondcenter,
+            zoom: 16.5,
+            padding: 40,
+		    pitch: 0,
+		    bearing: -95,
+            essential: true
+            });
+			n = n - 1
+			document.getElementById('target').textContent = 'バイク用駐車場'
+        	document.getElementById('picture').src = picbikeparking
+			document.getElementById('direction').src = right
+
+			popup1 = new mapboxgl.Marker(el1)
+    		.setLngLat(bikeparking)
+    		.addTo(map)
+        }
+        else if(n == 6){
 			map.flyTo({
             center: center,
             zoom: 16.5,
@@ -423,7 +483,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(parking)
     		.addTo(map)
         }
-        else if(n == 6){
+        else if(n == 5){
 			map.flyTo({
             center: secondcenter,
             zoom: 16.5,
@@ -441,7 +501,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(hugu)
     		.addTo(map)
         }
-        else if(n == 5){
+        else if(n == 4){
 			map.flyTo({
             center: secondcenter,
             zoom: 16.5,
@@ -459,7 +519,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(maneki)
     		.addTo(map)
         }
-        else if(n == 4){
+        else if(n == 3){
 			map.flyTo({
             center: center,
             zoom: 16.5,
@@ -477,7 +537,7 @@ body { margin: 0; padding: 0; }
     		.setLngLat(oohara)
     		.addTo(map)
         }
-        else if(n == 3){
+        else if(n == 2){
 			map.flyTo({
 			center: exelcoCross,
             zoom: 18.5,
@@ -495,24 +555,6 @@ body { margin: 0; padding: 0; }
     		.setLngLat(exelco)
     		.addTo(map)
         }
-        else if(n == 2){
-			map.flyTo({
-            center: start,
-            zoom: 18.5,
-            padding: 40,
-		    pitch: 0,
-		    bearing: -95,
-            essential: true
-            });
-            n = n - 1
-			document.getElementById('target').textContent = '磯丸水産'
-			document.getElementById('picture').src = picisomaru
-			document.getElementById('direction').src = straight
-
-			popup1 = new mapboxgl.Marker(el1)
-    		.setLngLat(start)
-    		.addTo(map)
-        }
         else if(n == 1){
 			map.flyTo({
             center: start,
@@ -522,6 +564,7 @@ body { margin: 0; padding: 0; }
 		    bearing: -95,
             essential: true
             });
+            n = n - 1
 			document.getElementById('target').textContent = '磯丸水産'
 			document.getElementById('picture').src = picisomaru
 			document.getElementById('direction').src = straight
@@ -562,6 +605,17 @@ body { margin: 0; padding: 0; }
 	new mapboxgl.Marker(el3)
 	.setLngLat(kotobuki)
 	.setPopup(popup3)
+	.addTo(map)
+	.togglePopup();
+
+	const popup4 = new mapboxgl.Popup({ offset: 25 , closeButton: false}).setText(
+		'目的地'
+	);
+	const el4 = document.createElement('div');
+	el4.id = 'pic-goal';
+	new mapboxgl.Marker(el4)
+	.setLngLat(hotel)
+	.setPopup(popup4)
 	.addTo(map)
 	.togglePopup();
 
