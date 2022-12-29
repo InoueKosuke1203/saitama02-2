@@ -453,14 +453,14 @@ body { margin: 0; padding: 0; }
         }
 		else if(n == 7){
 			map.flyTo({
-            center: secondcenter,
-            zoom: 16.5,
+            center: [139.6202220879132, 35.90663859635496],
+            zoom: 18,
             padding: 40,
 		    pitch: 0,
 		    bearing: -95,
             essential: true
             });
-			n = n - 1
+			n = n + 1
 			document.getElementById('target').textContent = 'バイク用駐車場'
         	document.getElementById('picture').src = picbikeparking
 			document.getElementById('direction').src = right
@@ -471,16 +471,16 @@ body { margin: 0; padding: 0; }
         }
         else if(n == 6){
 			map.flyTo({
-            center: center,
-            zoom: 16.5,
+            center: [139.62075862817665, 35.90657484006642],
+            zoom: 18,
             padding: 40,
 		    pitch: 0,
 		    bearing: 0,
             essential: true
             });
-            n = n - 1
+        	n = n + 1
 			document.getElementById('target').textContent = '駐車場'
-            document.getElementById('picture').src = picparking
+    		document.getElementById('picture').src = picparking
 			document.getElementById('direction').src = nextLeft
 
 			popup1 = new mapboxgl.Marker(el1)
@@ -489,16 +489,16 @@ body { margin: 0; padding: 0; }
         }
         else if(n == 5){
 			map.flyTo({
-            center: secondcenter,
-            zoom: 16.5,
+            center: [139.6206847334082, 35.90643041237198],
+            zoom: 18,
             padding: 40,
 		    pitch: 0,
 		    bearing: -95,
             essential: true
             });
-            n = n - 1
+        	n = n + 1
 			document.getElementById('target').textContent = '大間の関'
-            document.getElementById('picture').src = pichugu
+        	document.getElementById('picture').src = pichugu
 			document.getElementById('direction').src = tRight
 
 			popup1 = new mapboxgl.Marker(el1)
@@ -602,7 +602,7 @@ body { margin: 0; padding: 0; }
 	.togglePopup();
 
 	const popup3 = new mapboxgl.Popup({ offset: 25 , closeButton: false}).setText(
-		'パチンコ コトブキ'
+		'コトブキ'
 	);
 	const el3 = document.createElement('div');
 	el3.id = 'pic-startrand';
